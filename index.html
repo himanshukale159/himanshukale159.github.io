@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home - Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Himanshu Kale</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="project.html">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="skills.html">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Home Section -->
+<div class="home-section" style="background-image: url('images/bg_2.jpg');">
+    <div class="container text-center">
+      <h1>Hi !</h1>
+      <h1>I am <span id="animated-text">Himanshu Kale</span></h1>
+      <a href="about.html" class="know-me-link">Know Me</a>
+    </div>
+</div>
+  
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.5/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const phrases = ["Himanshu Kale","a Data Scientist"];
+        let currentPhrase = 0;
+        let letterCount = 0;
+        let currentText = '';
+        let isDeleting = false;
+        let typingSpeed = 200;
+    
+        function type() {
+            const element = document.getElementById('animated-text');
+            const fullText = phrases[currentPhrase];
+    
+            if (isDeleting) {
+                currentText = fullText.substring(0, letterCount - 1);
+                letterCount--;
+                typingSpeed = 70;
+            } else {
+                currentText = fullText.substring(0, letterCount + 1);
+                letterCount++;
+                typingSpeed = 200;
+            }
+    
+            element.innerHTML = '<span class="typing">' + currentText + '</span>';
+    
+            if (!isDeleting && currentText === fullText) {
+                typingSpeed = 2500; // Pause at end
+                isDeleting = true;
+            } else if (isDeleting && currentText === '') {
+                isDeleting = false;
+                currentPhrase++;
+                if (currentPhrase >= phrases.length) currentPhrase = 0;
+                typingSpeed = 500;
+            }
+    
+            setTimeout(type, typingSpeed);
+        }
+    
+        type(); // Start the typing effect on load
+    });
+</script>
+</body>
+</html>
