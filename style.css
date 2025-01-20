@@ -8,6 +8,7 @@
     justify-content: center;
     color: brown; /* White text color */
     text-shadow: 1px 1px 2px black; 
+    font-family: 'Courier New', Courier, monospace;
   }
   
 
@@ -40,7 +41,7 @@
     margin-bottom: 20px;
   }
   .about-section p {
-    color: darkgreen;
+    color: black;
     font-size : 20px;
   }
   
@@ -54,12 +55,16 @@
     }
 
   .projects-section h2 {
+    margin-top: 50px;
     margin-bottom: 40px;
     font-size: 2.5rem;
     text-align: center;
   }
   .card {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    height: 380px; /* Fixed height */
+    width: 100%; /* Full width within the column */
+    display: flex;
   }
   .card-img-top {
     max-height: 180px;
@@ -67,6 +72,7 @@
   }
   .card-body {
     padding: 15px;
+    
   }
   .card-title {
     font-size: 1.25rem;
@@ -74,6 +80,7 @@
   .card-text {
     margin-bottom: 15px;
   }
+
   
   /* Skills Section Styles */
   .skills-section h2 {
@@ -115,37 +122,89 @@
     background-color: #007bff;
     border-color: #007bff;
   }
-  
-  /* Contact Section Styles */
-  .contact-section {
-    padding: 50px 0;
-    color: #fff;
-  }
-  .contact-section h2 {
-    font-size: 2.5rem;
+
+  /* Blogs Section Styles */
+  .blogs-section h2 {
+    margin-top: 50px;
     margin-bottom: 40px;
+    font-size: 2.5rem;
     text-align: center;
   }
-  .contact-section p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+
+  .blogs-section {
+    background-image: url('images/bg_2.jpg'); /* Change path accordingly */
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    }
+
+
+  .blogs-section .card {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   }
-  .social-icon {
-    width: 50px;
-    margin-bottom: 10px;
+  .blogs-section .card-img-top {
+    padding: 20px;
+    background-color: #f8f9fa;
+    height: 180px;
+    object-fit: contain;
   }
-  .social-icon:hover {
-    opacity: 0.7;
+  .blogs-section .card-body {
+    padding: 15px;
   }
-  .contact-section a {
+  .blogs-section .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+  }
+  .blogs-section .btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+  }
+  .blogs-section .btn-outline-primary:hover {
     color: #fff;
-    text-decoration: none;
-    display: inline-block;
-    margin-bottom: 10px;
+    background-color: #007bff;
+    border-color: #007bff;
   }
-  .contact-section a:hover {
-    color: #ddd;
-  }
+
+  /* Contact Section Styles */
+
+  .contact-section {
+    background-image: url('images/bg_2.jpg'); /* Change path accordingly */
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    }
+.contact-section {
+  padding: 50px 0;
+  color: #fff;
+}
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.contact-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.social-icon {
+  width: 50px;
+  margin-bottom: 10px;
+  margin-right: 500px;
+  margin-left: 20px; /* Increased margin between icons */
+}
+.social-icon:hover {
+  opacity: 0.7;
+}
+.contact-section a {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.contact-section a:hover {
+  color: black;
+}
+
   
   /* Smooth scroll for all links */
   html {
@@ -343,7 +402,7 @@
 
 .resume-section .col header.title {
   font-family: helvetica;
-  color: #11a372;
+  color: black;
   padding: 0px 0px 20px 30px;
 }
 
@@ -375,13 +434,13 @@
   border-radius: 50%;
   right: calc(100% + 22px);
   top: 0;
-  background-color: #11a372;
+  background-color: black;
   border: 2px solid white;
 }
 
 .resume-section .box h4 {
   position: relative;
-  color: #11a372;
+  color: black;
 }
 
 .resume-section .box h3 {
